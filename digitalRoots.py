@@ -1,47 +1,30 @@
 #digitalRoots.py
-#obtiene la raíz digital de un entero positivo cualquiera
-# donde n contiene [a, b] dígitos, su raíz digital DR(n) = a+b, siempre y cuando a+b < 10
-#DR no puede ser más de un dígito
+#produces the digital root of any positive integer
+# where n contains [a, b] digits, its digital root DR(n) = a+b, provided a+b < 10
+#the output cannot be greater than one digit in length
 
-print("Ingrese número: ")
+print("Enter a positive integer: ")
 intValue = input()
 
-def getRoot(number): #FUNCIONA!
+def getRoot(number):
     numList = list(number)
-    print("Los enteros que componen a este número son: "+ str(numList[:]))
+    print("The integers that make up this number are: "+ str(numList[:]))
     potentialRoot = 0
     for n in numList:
         potentialRoot += int(n)
         #print(potentialRoot)
-        global jiffy
-        jiffy = potentialRoot #guarda el valor de potentialRoot
+        global pRootCopy
+        pRootCopy = potentialRoot #saves a copy of value stored in potentialRoot
     return potentialRoot
 
-print(getRoot(intValue)) #potentialRoot ya no existe, pero tenemos a jiffy de respaldo
+print(getRoot(intValue)) #potentialRoot is gone, but we have pRootCopy
 
-while jiffy > 9: #mientras tenga más de dos dígitos, repetir operación getRoot
-    print(getRoot(str(jiffy)))
+while pRootCopy > 9: #repeat getRoot operation while the number is greater than two digits in length
+    print(getRoot(str(pRootCopy)))
     continue
-    if jiffy <= 9: #cuando quede un solo dígito, esa es la raíz digital
+    if pRootCopy <= 9: #when only one digit remains, that value is the digital root
         break
 
-###def getMulti(number): #no funciona porque conceptualmente no están obteniendo múltiplos
-"""    global multiples
-    multiples = [] #lista de los múltiplos
-    mIncr = int(number)*int(intValue)#múltiplo por valor
-    multiples.append(mIncr)
-    for x in range(1, 21):
-        grow = int(multiples[0]) + mIncr
-        multiples.append(grow)
-    return multiples
-
-print ("¿Desea obtener múltiplos base [n] de este número? [ENTER en caso contrario]")
-mult = input()
-if mult == '':
-    print ("Ok")
-elif mult != '':
-    print (getMulti(mult))
-"""
 
 
 
