@@ -2,14 +2,12 @@
 #21.09.2019
 #22.09.2019 Refactored (1)
 
-"""noun: a change made to the internal structure of software to make it easier
-to understand and cheaper to modify without changing its observable behavior
-
-verb: to restructure software by applying a series of refactorings without
-changing its observable behavior."""
+"""Regex version of string method. strip().
+"""
 
 import re, pyperclip, time
 
+#Examples
 stuff = "oomenips "
 stuff1 = "0311MOS033"
 stuff2 = "booyakasha"
@@ -20,6 +18,8 @@ time.sleep(0.3)
 print()
 
 def stripRe(randStr, elim = " "): #Default value of item to remove is blankspace
+        """Enter text string and character(s) to be removed. Blankspace will be removed if no chars specified.
+        All instances of char will be removed."""
         time.sleep(0.4)
         print("Item to be stripped from '%s' is '%s'."%(randStr, elim))
         newStr = list()
