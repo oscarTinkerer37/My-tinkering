@@ -1,8 +1,7 @@
 #palindrome finder
-#RESUELTO (10/JUL/17)
-#usé función list.reverse() en lugar de list.sort(reverse=True)
+#used list.reverse() instead of list.sort(reverse=True)
 import time
-print('Ingrese el número cuyas potencias (^2, ^3) desee verificar si son palindromas: ')
+print('Enter the number whose squared and cubed values will be checked for palindromic quality: ')
 
 myNum = input()
 
@@ -12,9 +11,9 @@ print(myNum + '^2 = ' +str(square))
 chkSq = list(str(square))
 chkSq.reverse()
 if chkSq == list(str(square)):
-    print('Palindroma: ' + str(square) + ' == ' + (str(''.join(chkSq))))
+    print('Palindrome: ' + str(square) + ' == ' + (str(''.join(chkSq))))
 else:
-    print(str(square) + ' NO es palindroma')
+    print(str(square) + ' NOT a palindrome')
 print()
 
 time.sleep(0.25)
@@ -24,6 +23,6 @@ print(myNum + '^3 = ' +str(cube))
 chkCube = list(str(cube))
 chkCube.reverse()
 if chkCube == list(str(cube)):
-    print('Palindroma: ' + str(cube) + ' == '+ (str(''.join(chkCube))))
+    print('Palindrome: ' + str(cube) + ' == '+ (str(''.join(chkCube))))
 else:
-    print(str(cube) + ' NO es palindroma')
+    print(str(cube) + ' NOT a palindrome')
